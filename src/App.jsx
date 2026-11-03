@@ -67,5 +67,5 @@ export default function App(){
  <section className="area-summary"><div className="areatitle"><span><Ruler size={20}/></span><div><h3>What can your roof support?</h3><p>Using your current roof area and planning density.</p></div></div><div className="areastat"><small>Area-based capacity</small><strong>{num(x.areaCap,2)} <em>kW</em></strong></div><div className="areastat"><small>After sanctioned-load cap</small><strong>{num(x.feasible,2)} <em>kW</em></strong></div><div className="arearesult"><small>Compare area potential with selected system size.</small><b className={x.cap<=x.feasible?"ok":"warn"}>{x.cap<=x.feasible?"Within estimate":"Above area/load estimate"}</b></div></section>
  <section className="billstrip" id="help"><div><span><IndianRupee size={19}/></span><div><h3>Estimated monthly electricity bill</h3><p>Before solar: {money(x.bill)} · Potential bill offset: {money(x.offset)}</p></div></div><button onClick={csv}>Download estimate <ArrowUpRight size={14}/></button></section>
  <footer><div className="brand"><span className="brandmark"><Sun size={17}/></span>solar<span className="four">4</span>home</div><p>Plan intelligently. Verify locally. Install confidently.</p><small>Planning tool only · Results are indicative, not a quotation or guarantee.</small></footer>
- </div></main>
+ </main>
 }
