@@ -1,7 +1,7 @@
 import React,{useMemo,useState} from "react";
 import {jsPDF} from "jspdf";
 import html2canvas from "html2canvas";
-import {Sun,Zap,Ruler,IndianRupee,Home,ArrowUpRight,RotateCcw,Info,Calculator,Leaf,Sparkles,Menu,Pin,PinOff,ChartNoAxesCombined,PanelLeftClose} from "lucide-react";
+import {Sun,Zap,Ruler,IndianRupee,Home,ArrowUpRight,RotateCcw,Info,Calculator,Leaf,Sparkles,Menu,Pin,PinOff,BarChart3,PanelLeftClose} from "lucide-react";
 import {Area,AreaChart,Bar,BarChart,CartesianGrid,Line,LineChart,ResponsiveContainer,Tooltip,XAxis,YAxis} from "recharts";
 const money=v=>new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:0}).format(Number.isFinite(v)?v:0);
 const num=(v,d=1)=>new Intl.NumberFormat("en-IN",{maximumFractionDigits:d}).format(Number.isFinite(v)?v:0);
