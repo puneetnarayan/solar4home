@@ -17,3 +17,39 @@
 #overview,#calculator,#generation,#savings,#roof,#help{scroll-margin-top:20px}
 @media(max-width:900px){.shell{padding:0 20px}.sidebar{position:sticky;top:0;left:auto;width:100%;height:auto;bottom:auto;z-index:30;flex-direction:row;overflow-x:auto;padding:8px 5px;border:1px solid #e5ece4;border-radius:0 0 12px 12px;gap:4px}.side-label,.side-tip{display:none}.sidebar>a{white-space:nowrap;padding:9px 10px;font-size:10px}.plot-grid{grid-template-columns:1fr}}
 @media(max-width:600px){.shell{padding:0 13px}.sidebar{margin:0 -13px;padding:7px 10px}.sidebar>a{font-size:9px;padding:8px}.plot-grid{gap:10px}}
+
+
+/* Collapsible, pinnable sidebar navigation */
+.shell.sidebar-open{padding-left:250px!important;padding-right:34px!important}
+.shell.sidebar-closed{padding-left:34px!important;padding-right:34px!important}
+.topbar{position:relative;gap:14px}
+.hamburger{width:38px;height:38px;flex:0 0 38px;display:grid;place-items:center;border:1px solid #dfe9df;background:#fff;color:#527d5c;border-radius:10px;cursor:pointer;transition:.18s}
+.hamburger:hover,.pin-button:hover{background:#eaf4e9}
+.sidebar{top:76px!important;left:max(0px,calc((100vw - 1440px)/2))!important;width:205px!important;bottom:0!important;height:auto!important;z-index:40!important;padding:20px 13px!important;border-radius:0!important;overflow-y:auto;transition:transform .22s ease,opacity .22s ease!important;box-shadow:8px 0 24px #3046320b}
+.sidebar.is-open{transform:translateX(0);opacity:1;pointer-events:auto}
+.sidebar.is-closed{transform:translateX(-105%);opacity:0;pointer-events:none}
+.sidebar-head{display:flex;align-items:center;justify-content:space-between;padding:0 7px 9px}
+.sidebar-head .side-label{padding:0}
+.pin-button{width:30px;height:30px;display:grid;place-items:center;border:1px solid #dfe9df;background:#fff;color:#5b9168;border-radius:8px;cursor:pointer}
+.sidebar.sidebar-pinned .pin-button{background:#e5f2e7;border-color:#cfe4d2}
+.sidebar>a{min-height:41px}
+.sidebar-scrim{display:none}
+#overview,#calculator,#generation,#savings,#roof,#help{scroll-margin-top:92px}
+.savings-panel{margin-top:14px}
+.savings-chart{height:205px}
+@media(max-width:900px){
+ .shell.sidebar-open,.shell.sidebar-closed{padding:0 20px!important}
+ .sidebar{position:fixed!important;top:62px!important;left:0!important;bottom:0!important;width:min(285px,84vw)!important;height:auto!important;flex-direction:column!important;overflow-y:auto!important;overflow-x:hidden!important;border:1px solid #e5ece4!important;border-left:0!important;border-radius:0 14px 14px 0!important;padding:18px 13px!important;background:#fbfdfb!important;box-shadow:12px 0 35px #203b2925!important}
+ .sidebar>a{white-space:normal!important;padding:11px 12px!important;font-size:11px!important}
+ .sidebar .side-label{display:block!important}
+ .sidebar .side-tip{display:flex!important}
+ .sidebar-scrim.visible{display:block;position:fixed;inset:62px 0 0;z-index:35;border:0;background:#17291d55;cursor:pointer}
+ .sidebar-scrim:not(.visible){display:none}
+}
+@media(max-width:600px){
+ .shell.sidebar-open,.shell.sidebar-closed{padding:0 13px!important}
+ .sidebar{margin:0!important}
+ .topbar{gap:9px}
+ .hamburger{width:35px;height:35px;flex-basis:35px}
+ .savings-chart{height:180px}
+}
